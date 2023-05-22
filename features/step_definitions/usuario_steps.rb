@@ -33,13 +33,15 @@ end
 
 E ('realizo a alteracao dos dados do usuario') do 
     @idUsuario = @request['id']
-    @body = commons_class.altera_body(@dadosUsuario)
+    @body = commons_class.retorna_body('usuario')
     @response = criacao_usuario.altera_usuario(@idUsuario, @body)
 end
 
 Entao ('valido que os dados foram alterados') do
     aggregate_failures do
         expect(@response.code).to eql(200)
+        #binding.pry
+        expect(@response['name']).not_to eql(@dadosUsuario['name'])
     end
 end
 
