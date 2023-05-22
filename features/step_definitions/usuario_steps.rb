@@ -24,5 +24,21 @@ end
 Entao ('valido as informacoes do usuario') do
     aggregate_failures do
         expect(@response.code).to eql(200)
+        expect(@response['name']).to eql(@dadosUsuario['name'])
+        expect(@response['email']).to eql(@dadosUsuario['email'])
+        expect(@response['gender']).to eql('female')
+        expect(@response['status']).to eql('active')
+    end
+end
+
+E ('realizo a alteracao dos dados do usuario') do 
+    @idUsuario = @request['id']
+    @body = commons_class.altera_body(@dadosUsuario)
+    @response = criacao_usuario.altera_usuario(@idUsuario, @body)
+end
+
+Entao ('valido que os dados foram alterados') do
+    aggregate_failures do
+        expect(@response.code).to eql(200)
     end
 end

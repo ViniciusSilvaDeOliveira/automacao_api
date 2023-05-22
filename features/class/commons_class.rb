@@ -13,4 +13,11 @@ class CommonsClass
 
         return massa
     end
+
+    def altera_body(dadosUsuario) 
+        alteraUsuario = dadosUsuario       
+        alteraUsuario["name"] = Faker::Name.name
+        alteraUsuario["email"] = Faker::Internet.email
+        alteraUsuario
+    end
 end
