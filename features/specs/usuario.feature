@@ -22,3 +22,10 @@ Funcionalidade: Criação de usuário
         Quando enviar essa massa para o endpoint de criacao
         E realizo a alteracao dos dados do usuario
         Entao valido que os dados foram alterados
+
+    @delete_id
+    Cenario: excluo o usuario criado
+        Dado ter a massa de um usuario criado
+        Quando enviar essa massa para o endpoint de criacao
+        E realizo a exclusao desse usuario
+        Entao valido que o usuario foi excluido

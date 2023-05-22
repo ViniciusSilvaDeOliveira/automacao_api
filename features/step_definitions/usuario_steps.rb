@@ -42,3 +42,12 @@ Entao ('valido que os dados foram alterados') do
         expect(@response.code).to eql(200)
     end
 end
+
+E ('realizo a exclusao desse usuario') do 
+    @idUsuario = @request['id']
+    @response = criacao_usuario.exclui_usuario(@idUsuario)
+end
+
+Entao ('valido que o usuario foi excluido') do
+    expect(@response.code).to eql(204)
+end

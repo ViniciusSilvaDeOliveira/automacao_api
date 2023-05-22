@@ -21,4 +21,11 @@ class CriarUsuario
             :body => body
         )
     end
+
+    def exclui_usuario(idUsuario)
+        request = HTTParty.delete(
+            "https://gorest.co.in/public/v2/users/#{idUsuario}",
+            :headers => {'Authorization' => 'Bearer ab6bd7f947aebad9833f4375950a66d8f6d2b49b7eabfebda8cc198605bc303e'}
+        )
+    end
 end
