@@ -15,3 +15,14 @@ Entao ('recebi a confirmacao de inclusao do usuario') do
         expect(@request['status']).to eql('active')
     end    
 end
+
+E ('buscar o usuario pelo ID') do
+    @idUsuario = @request['id']
+    @response = criacao_usuario.busca_usuario(@idUsuario)
+end
+
+Entao ('valido as informacoes do usuario') do
+    aggregate_failures do
+        expect(@response.code).to eql(200)
+    end
+end
