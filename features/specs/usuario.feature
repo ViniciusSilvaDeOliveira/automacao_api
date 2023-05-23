@@ -30,6 +30,18 @@ Funcionalidade: Criação de usuário
         E realizo a exclusao desse usuario
         Entao valido que o usuario foi excluido
 
+    @cenarios_negativos
+    Esquema do Cenario: cenarios negativos para novos usuários
+        Dado ter a massa de um usuario invalido <cenario>
+        Quando enviar essa massa para o endpoint de criacao
+        Entao valido a mensagem de erro <cenario>
+        Exemplos: 
+            | cenario  | 
+            | "email"  | 
+            | "name"   |
+            | "gender" |
+            | "status" |
+
     @get_todos_usuarios
     Cenario: filtrar usuarios por parametros
         Dado que realizo a busca de todos os usuarios por parametro

@@ -62,3 +62,27 @@ Entao ('valido a busca por parametros') do
     binding.pry
     expect(@request.code).to eql(200)
 end
+
+Dado ('ter a massa de um usuario invalido {string}') do |cenario|
+    @dadosUsuario = commons_class.retorna_body('usuario', cenario)
+end
+
+Entao ('valido a mensagem de erro {string}') do |cenario|
+    case cenario
+        when "email"
+            expect(@request.code).to eql(422)
+            expect(@request.first).to include("field" => "email")
+
+        when "name"
+            expect(@request.code).to eql(422)
+            expect(@request.first).to include("field" => "name")
+
+        when "gender"
+            expect(@request.code).to eql(422)
+            expect(@request.first).to include("field" => "gender")
+
+        when "status"
+            expect(@request.code).to eql(422)
+            expect(@request.first).to include("field" => "status")
+    end
+end
