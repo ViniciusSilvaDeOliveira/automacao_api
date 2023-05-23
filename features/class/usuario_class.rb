@@ -28,4 +28,11 @@ class CriarUsuario
             :headers => {'Authorization' => 'Bearer ab6bd7f947aebad9833f4375950a66d8f6d2b49b7eabfebda8cc198605bc303e'}
         )
     end
+
+    def busca_usuario_por_parametros(gender, status)
+        request = HTTParty.get(
+            "https://gorest.co.in/public/v2/users?page=#{gender}&status=#{status}",
+            :headers => {'Authorization' => 'Bearer ab6bd7f947aebad9833f4375950a66d8f6d2b49b7eabfebda8cc198605bc303e'}
+        )
+    end
 end

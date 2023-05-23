@@ -53,3 +53,12 @@ end
 Entao ('valido que o usuario foi excluido') do
     expect(@response.code).to eql(204)
 end
+
+Dado ('que realizo a busca de todos os usuarios por parametro') do 
+    @request = criacao_usuario.busca_usuario_por_parametros('male', 'active')
+end
+
+Entao ('valido a busca por parametros') do
+    binding.pry
+    expect(@request.code).to eql(200)
+end

@@ -29,3 +29,8 @@ Funcionalidade: Criação de usuário
         Quando enviar essa massa para o endpoint de criacao
         E realizo a exclusao desse usuario
         Entao valido que o usuario foi excluido
+
+    @get_todos_usuarios
+    Cenario: filtrar usuarios por parametros
+        Dado que realizo a busca de todos os usuarios por parametro
+        Entao valido a busca por parametros
