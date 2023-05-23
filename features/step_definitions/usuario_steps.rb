@@ -54,15 +54,6 @@ Entao ('valido que o usuario foi excluido') do
     expect(@response.code).to eql(204)
 end
 
-Dado ('que realizo a busca de todos os usuarios por parametro') do 
-    @request = criacao_usuario.busca_usuario_por_parametros('male', 'active')
-end
-
-Entao ('valido a busca por parametros') do
-    binding.pry
-    expect(@request.code).to eql(200)
-end
-
 Dado ('ter a massa de um usuario invalido {string}') do |cenario|
     @dadosUsuario = commons_class.retorna_body('usuario', cenario)
 end
@@ -85,4 +76,13 @@ Entao ('valido a mensagem de erro {string}') do |cenario|
             expect(@request.code).to eql(422)
             expect(@request.first).to include("field" => "status")
     end
+end
+
+Dado ('que realizo a busca de todos os usuarios por parametro') do 
+    @request = criacao_usuario.busca_usuario_por_parametros('male', 'active')
+end
+
+Entao ('valido a busca por parametros') do
+    binding.pry
+    expect(@request.code).to eql(200)
 end
