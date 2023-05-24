@@ -44,5 +44,9 @@ Funcionalidade: Criação de usuário
 
     @get_todos_usuarios
     Cenario: filtrar usuarios por parametros
-        Dado que realizo a busca de todos os usuarios por parametro
-        Entao valido a busca por parametros
+        Dado que realizo a busca de todos os usuarios por parametro <gender>
+        Entao valido a busca por parametros <gender>
+        Exemplos:
+            | gender   | 
+            | "male"   |
+            | "female" |

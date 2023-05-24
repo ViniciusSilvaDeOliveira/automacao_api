@@ -78,11 +78,14 @@ Entao ('valido a mensagem de erro {string}') do |cenario|
     end
 end
 
-Dado ('que realizo a busca de todos os usuarios por parametro') do 
-    @request = criacao_usuario.busca_usuario_por_parametros('male', 'active')
+Dado ('que realizo a busca de todos os usuarios por parametro {string}') do |gender|
+    @request = criacao_usuario.busca_usuario_por_parametros(gender, 'inactive')
 end
 
-Entao ('valido a busca por parametros') do
-    binding.pry
+Entao ('valido a busca por parametros {string}') do |gender|
     expect(@request.code).to eql(200)
+    binding.pry
+    @request.each do |elemento|
+        expect(elemento["gender"]).to eql(gender)
+    end
 end
