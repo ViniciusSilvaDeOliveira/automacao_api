@@ -20,5 +20,7 @@ class CommonsClass
         massa["title"] = Faker::Movie.title unless parametro.eql?("title")
         massa["body"] = Faker::Quote.matz unless parametro.eql?("body")
         massa.delete(parametro) unless parametro.eql?(nil)
+        
+        return massa
     end
 end
