@@ -27,3 +27,10 @@ Funcionalidade: Criação de posts
         Quando enviar essa massa posts para o endpoint de criacao
         E realizo a alteracao do posts
         Entao recebi a confirmacao de alteracao do posts
+
+    @delete_posts
+    Cenario: excluir posts
+        Dado ter a massa de um posts criado
+        Quando enviar essa massa posts para o endpoint de criacao
+        E realizo a exclusao desse posts
+        Entao recebi a confirmacao de esclusao do posts

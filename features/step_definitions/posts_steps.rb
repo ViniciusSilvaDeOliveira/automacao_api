@@ -37,3 +37,14 @@ Entao ('recebi a confirmacao de alteracao do posts') do
         expect(@response['title']).not_to eql(@dadosPosts['title'])
     end
 end
+
+E ('realizo a exclusao desse posts') do 
+    @idPosts = @request['id']
+    @response = criacao_posts.excluir_posts(@idPosts)
+end
+
+Entao ('recebi a confirmacao de esclusao do posts') do
+    aggregate_failures do
+        expect(@response.code).to eql(204)
+    end
+end

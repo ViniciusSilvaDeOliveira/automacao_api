@@ -84,7 +84,7 @@ end
 
 Entao ('valido a busca por parametros {string}') do |gender|
     expect(@request.code).to eql(200)
-    binding.pry
+    #binding.pry
     @request.each do |elemento|
         expect(elemento["gender"]).to eql(gender)
     end
