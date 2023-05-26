@@ -34,3 +34,4 @@ Funcionalidade: Criação de posts
         Quando enviar essa massa posts para o endpoint de criacao
         E realizo a exclusao desse posts
         Entao recebi a confirmacao de esclusao do posts
+        teste
